@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> achat </title>
+    
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/font-awesome.css"/>
+    <link rel="stylesheet" href="/css/font-awesome.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://use.fontawesome.com/aac5c45839.js"></script>
+    <link href="/style.css" rel="stylesheet" />
+</head>
+
+<body  onload="enableEditMode();">
+  <section class = "chat_section">
+      <div class="brand">
+          <img height ="40" src="/chat.jpg" alt="">
+          <h1>Achat</h1>
+      </div>
+
+      <div class="message__area"></div>
+ <div>
+    <textarea name= "text" id = "textarea" cols = "30" rows ="1" placeholder="Chat comes here..."></textarea>
+</div>
+
+<div>
+  <button onclick="execCmd('bold');"><i class="fa fa-bold"></i></button>
+  <button onclick="execCmd('italic');"><i class="fa fa-italic"></i></button>
+  <button onclick="execCmd('strikethrough');"><i class="fa fa-strikethrough"></i></button>
+  <button onclick="execCmd('insertOrderedList');"><i class="fa fa-list-ol"></i></button>
+  <button onclick="execCmd('insertUnorderedList');"><i class="fa fa-list-ul"></i></button>
+  <button onclick="execCmd('upload');"><i class="fa fa-upload"></i></button>
+ </div> 
+
+ <script type="text/javascript">
+
+  function enableEditMode () {
+   textarea.document.designMode = 'On';
+  }
+
+  function execCmd (command) {
+   textarea.document.execCommand(command, false, null);
+  }
+</script>
+
+</section>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/client.js"></script>
+
+</body>
+</html>
